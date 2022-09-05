@@ -5,6 +5,7 @@ import Header from "../src/components/Header";
 import FavoritesPage from "../src/components/FavoritesPage";
 import AddBookPage from "../src/components/AddBookPage";
 import NotFoundPage from "../src/components/NotFoundPage";
+import EditBookPage from "../src/components/EditBookPage";
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -14,6 +15,7 @@ const AppRouter = () => (
                 <Route path="/" element={<MainPage/>} />
                 <Route path="/add-book" element={<AddBookPage />} />
                 <Route path="/favorites" element={<FavoritesPage />} />
+                <Route path="/edit/:bookSlug" element={<EditBookPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </div>

@@ -40,14 +40,12 @@ const AddBookForm = () => {
             isFavorite: booleanValue,  
             contentError: null
         })
-        console.log(typeof booleanValue)
     }
     const onAddBook = (e) => {
         e.preventDefault(); 
         if (bookTitle && bookAuthor === '') {
             setState({...state, 
                 contentError: 'You must write something!'});
-            console.log(state)
             return;
         }
 
