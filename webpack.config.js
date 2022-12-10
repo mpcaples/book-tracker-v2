@@ -4,8 +4,11 @@ module.exports = {
     mode: 'development',
     entry: './main.jsx',
     devtool: 'inline-source-map',
-    output: {path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js'},
+    output: {
+        path: path.join(__dirname, '/dist'),
+        filename: 'bundle.js',
+        publicPath: '/'
+    },
     devtool: 'inline-source-map',
     devServer: {
         static: './dist',

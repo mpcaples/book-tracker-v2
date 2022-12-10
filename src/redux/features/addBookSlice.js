@@ -18,6 +18,10 @@ const addBookSlice = createSlice({
             }
             state.bookList.push(newBookList);
         },
+        editBook: (state, action) => {
+            let {bookList} = state; 
+            state.bookList = bookList.map((item) => item.id === action.payload.id ? action.payload : item)
+        },
         deleteBook: (state, action) => {
             let { bookList } = state; 
             state.bookList = bookList.filter((item) => item.id !== action.payload.id); 
@@ -28,7 +32,7 @@ const addBookSlice = createSlice({
 }
 })
 
-export const {addBook, deleteBook, deleteBooks} = addBookSlice.actions
+export const {addBook, editBook, deleteBook, deleteBooks} = addBookSlice.actions
 
 
 export default addBookSlice.reducer; 

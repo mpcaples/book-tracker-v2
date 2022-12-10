@@ -15,7 +15,7 @@ const AppRouter = () => (
                 <Route path="/" element={<MainPage/>} />
                 <Route path="/add-book" element={<AddBookPage />} />
                 <Route path="/favorites" element={<FavoritesPage />} />
-                <Route path="/edit/:bookSlug" element={<EditBookPage />} />
+                <Route path="/edit/:id" element={<EditBookPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </div>
