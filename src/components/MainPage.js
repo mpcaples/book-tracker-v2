@@ -1,3 +1,4 @@
+import { Box, Button, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -16,9 +17,9 @@ const MainPage = () => {
         dispatch(deleteBooks());      
     }; 
     return (
-        <div>
-            <h1>Home Page</h1>
-            {bookList.length === 0 && <p>Please add a book to get started</p>}
+        <Box>
+            <Typography variant="h1">Main Page</Typography>
+            {bookList.length === 0 && <Typography variant="p">Please add a book to get started</Typography>}
             <ul>
                 {bookList.map((book) => {
                     return <BookListItem 
@@ -32,11 +33,11 @@ const MainPage = () => {
                 })}
             </ul>
             {bookList.length > 0 && <button onClick={onDeleteBooks}>Delete All books</button>}
-            <button onClick={() => {navigate("/add-book")}}>Add Book</button>
+            <Button variant="contained" onClick={() => {navigate("/add-book")}}>Add Book</Button>
             <div>
                 <TotalBooks totalBooks={bookList.length} />
             </div>
-        </div>
+        </Box>
     )
 }; 
 

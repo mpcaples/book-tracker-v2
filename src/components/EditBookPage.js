@@ -7,12 +7,12 @@ const EditBookPage = () => {
     const bookList = useSelector((state) => {
         return state.books.bookList
     });
-    let book = bookList.find((item) => item.id === id)
+    const book = bookList.find((item) => item.id === id)
     
     return (
         <div>
-            This is the Edit book page for book {id}
-            <p>{book.title}</p>
+            This is the Edit book page for book: 
+            <p>{book.title}, by {book.author}</p>
         </div>
     )
 }; 
