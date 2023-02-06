@@ -9,7 +9,7 @@ import NotFoundPage from "../src/components/NotFoundPage";
 import EditBookPage from "../src/components/EditBookPage";
 
 const AppRouter = () => (
-    <BrowserRouter>
+    <BrowserRouter basename="/book-tracker-v2">
         <div>
             <Header />
             <Routes>
