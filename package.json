@@ -2,10 +2,13 @@
   "name": "book-tracker-react-v2",
   "version": "1.0.0",
   "description": "",
+  "homepage": "http://mpcaples.github.io/book-tracker-v2",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development --hot",
     "build": "webpack --mode production",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "test": "jest"
   },
   "author": "",
@@ -17,6 +20,7 @@
     "babel-jest": "^28.1.1",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^28.1.1",
     "node-sass": "^7.0.1",
