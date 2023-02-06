@@ -1,14 +1,14 @@
 {
+  "homepage": "https://mpcaples.github.io/book-tracker-v2",
   "name": "book-tracker-react-v2",
   "version": "1.0.0",
   "description": "",
-  "homepage": "http://mpcaples.github.io/book-tracker-v2",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development --hot",
     "build": "webpack --mode production",
     "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "deploy" : "gh-pages -d dist",
     "test": "jest"
   },
   "author": "",
