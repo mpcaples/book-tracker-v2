@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addBook } from '../redux/features/addBookSlice';
 import str2bool from "../helperFunctions/str2bool";
+import { Button, FormControlLabel, FormGroup, Switch, TextField } from '@mui/material';
 
 
 
@@ -33,11 +34,11 @@ const AddBookForm = () => {
             contentError: null
         })
     }    
-    const onIsFavoriteChange = (e) => {
-        const booleanValue = str2bool(e.target.value)
+    const onIsFavoriteChange = () => {
+        
         setState({
             ...state, 
-            isFavorite: booleanValue,  
+            isFavorite: !isFavorite,  
             contentError: null
         })
     }
@@ -63,38 +64,39 @@ const AddBookForm = () => {
     }
     const { bookTitle, bookAuthor, isFavorite, contentError } = state;
     return (
-        <div> 
-            <form onSubmit={onAddBook}>
-                <input
+      
+            <FormGroup onSubmit={onAddBook}>
+                <TextField
+                    variant="outlined"
                     type="text" 
-                    placeholder="Title"
+                    label="Title"
                     value={bookTitle}
                     onChange={onBookTitleChange}
                     autoFocus
-                >
-                </input>
-                <input
+                />
+                <TextField
+                    variant="outlined"
                     type="text" 
                     placeholder="Author"
                     value={bookAuthor}
-                    onChange={onAuthorChange}
-                    
-                >
-                </input>
-                <label htmlFor="is-favorite">Is this book a favorite?</label>
-                <select 
-                    id="is-favorite" 
-                    name="is-favorite"
-                    onChange={onIsFavoriteChange}
-                >
-                    <option value={isFavorite}>Favorite</option>
-                    <option value={!isFavorite}>Not Favorite</option>
-                </select>
-                
-                <button>Add Book</button>
+                    onChange={onAuthorChange}  
+                />
+                <FormControlLabel 
+                    control={
+                        <Switch 
+                            checked={state.isFavorite}
+                            onChange={onIsFavoriteChange} 
+                        />
+                    }
+                    label="Favorite"
+                />
+                <Button 
+                    variant="contained"
+                    onClick={onAddBook}
+                >Add Book</Button>
                 {contentError ? <div className='error'>{contentError}</div> : null}
-            </form>
-        </div>
+            </FormGroup>
+    
     )
 }
 

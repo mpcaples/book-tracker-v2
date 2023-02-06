@@ -1,12 +1,11 @@
+import { ListItem, Typography } from '@mui/material';
 import React from 'react'; 
 
 const FavoritesListItem = ({title, author}) => {  
     return (
-        <div>
-            <li>
-                {title}, by {author}
-            </li>
-        </div>
+            <ListItem>
+                <Typography variant="h5">{title}, by {author}</Typography>
+            </ListItem>
     )
 }; 
 
